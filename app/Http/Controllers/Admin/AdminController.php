@@ -25,4 +25,14 @@ class AdminController extends Controller
     {
         return Auth::guard('admin');
     }
+     public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('/');
+    }
+    public function home()
+    {
+        return view('admin.home');
+    }
+
 }
